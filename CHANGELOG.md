@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * Edited Readme
+
+## 0.0.4
+
+* Edited Readme

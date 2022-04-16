@@ -73,32 +73,37 @@ Pagination(
 ![stylingimage](https://i.hizliresim.com/4mkcuv7.PNG)
 
 ```
-          Pagination(
-            width: MediaQuery.of(context).size.width * .7,
+  Pagination(
             paginateButtonStyles: PaginateButtonStyles(
                 backgroundColor: Colors.pink,
                 activeBackgroundColor: Colors.amber,
                 activeTextStyle: const TextStyle(color: Colors.red)),
             prevButtonStyles: PaginateSkipButton(
                 icon: const Icon(
-              Icons.arrow_back_ios,
-              size: 30,
-            )),
+                  Icons.arrow_back_ios,
+                  size: 30,
+                ),
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    bottomLeft: Radius.circular(20))),
             nextButtonStyles: PaginateSkipButton(
                 icon: const Icon(
-              Icons.arrow_right_alt,
-              color: Colors.white,
-            )),
+                  Icons.arrow_right_alt,
+                  color: Colors.white,
+                ),
+                borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomRight: Radius.circular(20))),
             onPageChange: (number) {
               setState(() {
                 currentPage = number;
               });
             },
             useGroup: true,
-            totalPage: 100,
+            totalPage: 30,
             show: 4,
             currentPage: currentPage,
-          ),
+          )
 
 ```
 
