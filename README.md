@@ -15,17 +15,24 @@
 int currentPage = 1;
 Pagination(
             paginateButtonStyles: PaginateButtonStyles(),
-            prevButtonStyles: PaginateSkipButton(),
-            nextButtonStyles: PaginateSkipButton(),
+            prevButtonStyles: PaginateSkipButton(
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    bottomLeft: Radius.circular(20))),
+            nextButtonStyles: PaginateSkipButton(
+                borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomRight: Radius.circular(20))),
             onPageChange: (number) {
               setState(() {
                 currentPage = number;
               });
             },
+            useGroup: false,
             totalPage: 30,
-            show: 3,
+            show: 2,
             currentPage: currentPage,
-    ),
+          )
 ```
 
 ### Example 2
@@ -36,24 +43,30 @@ Pagination(
 
 ```
 Pagination(
-            width: MediaQuery.of(context).size.width * .7,
+            width: MediaQuery.of(context).size.width * .6, // this prop is optional
             paginateButtonStyles: PaginateButtonStyles(),
-            prevButtonStyles: PaginateSkipButton(),
-            nextButtonStyles: PaginateSkipButton(),
+            prevButtonStyles: PaginateSkipButton(
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    bottomLeft: Radius.circular(20))),
+            nextButtonStyles: PaginateSkipButton(
+                borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomRight: Radius.circular(20))),
             onPageChange: (number) {
               setState(() {
                 currentPage = number;
               });
             },
             useGroup: true,
-            totalPage: 100,
+            totalPage: 30,
             show: 4,
             currentPage: currentPage,
-    ),
-```
+          )
+  ```
 
 ### **Note: If show value greater than totalPage It will throw error.**
-### **Note2: Height value default:50. And works with only groupped pagination.**
+### **Note2: Height value default:50. And works with only groupped pagination. Also width works with too**
 
 ### -- Styling
 
