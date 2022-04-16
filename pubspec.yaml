@@ -1,6 +1,6 @@
 name: flutter_pagination
-description: Use pagination for your flutter app
-version: 0.0.6
+description: Use pagination for your flutter app. You can use group pagination or normal pagination also. You can customize paginated widgets with custom styles.
+version: 0.0.7
 homepage: https://github.com/Akifcan/flutter_pagination
 
 environment:
