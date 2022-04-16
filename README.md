@@ -72,6 +72,9 @@ Pagination(
 
 ![stylingimage](https://i.hizliresim.com/4mkcuv7.PNG)
 
+````
+
+
 Pagination(
             paginateButtonStyles: PaginateButtonStyles(
                 backgroundColor: Colors.pink,
@@ -105,6 +108,9 @@ Pagination(
             show: 4,
             currentPage: currentPage,
           )
+
+```
+
 
 | Required Fields     | Type                 |
 |----------------------|----------------------|

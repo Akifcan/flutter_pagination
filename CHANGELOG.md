@@ -17,3 +17,7 @@
 ## 0.0.5
 
 * Added Color Option for Skip Buttons
+
+## 0.0.6
+
+* Added Color Option for Skip Buttons
