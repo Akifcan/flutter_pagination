@@ -24,9 +24,7 @@ class SkipButton extends StatelessWidget {
     return SizedBox(
       height: height,
       child: ClipRRect(
-        borderRadius: skipButtonType == SkipButtonType.prev
-            ? buttonStyles.getPrevButtonBorderRadius
-            : buttonStyles.getNextButtonBorderRadius,
+        borderRadius: buttonStyles.getBorderRadius,
         child: Material(
           color: Colors.blue,
           child: InkWell(

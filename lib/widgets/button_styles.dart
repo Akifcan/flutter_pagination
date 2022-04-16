@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 class PaginateButtonStyles {
   final double? fontSize;
   final BorderRadius? paginateButtonBorderRadius;
-  final BorderRadius? prevButtonBorderRadius;
-  final BorderRadius? nextButtonBorderRadius;
   final Color? backgroundColor;
   final Color? activeBackgroundColor;
   final TextStyle? textStyle;
@@ -15,8 +13,6 @@ class PaginateButtonStyles {
       this.backgroundColor,
       this.activeBackgroundColor,
       this.paginateButtonBorderRadius,
-      this.prevButtonBorderRadius,
-      this.nextButtonBorderRadius,
       this.textStyle,
       this.activeTextStyle});
 
@@ -47,22 +43,15 @@ class PaginateButtonStyles {
   BorderRadius get getPaginateButtonBorderRadius {
     return paginateButtonBorderRadius ?? BorderRadius.circular(0);
   }
-
-  BorderRadius get getPrevButtonBorderRadius {
-    return prevButtonBorderRadius ??
-        const BorderRadius.only(
-            topLeft: Radius.circular(20), bottomLeft: Radius.circular(20));
-  }
-
-  BorderRadius get getNextButtonBorderRadius {
-    return nextButtonBorderRadius ??
-        const BorderRadius.only(
-            topRight: Radius.circular(20), bottomRight: Radius.circular(20));
-  }
 }
 
 class PaginateSkipButton extends PaginateButtonStyles {
   final Icon? icon;
+  final BorderRadius? borderRadius;
 
-  PaginateSkipButton({this.icon});
+  PaginateSkipButton({this.icon, this.borderRadius});
+
+  BorderRadius get getBorderRadius {
+    return borderRadius ?? BorderRadius.zero;
+  }
 }
