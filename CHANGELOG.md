@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * Edited Readme
+
+## 0.0.5
+
+* Added Color Option for Skip Buttons

@@ -48,10 +48,16 @@ class PaginateButtonStyles {
 class PaginateSkipButton extends PaginateButtonStyles {
   final Icon? icon;
   final BorderRadius? borderRadius;
+  final Color? buttonBackgroundColor;
 
-  PaginateSkipButton({this.icon, this.borderRadius});
+  PaginateSkipButton(
+      {this.icon, this.borderRadius, this.buttonBackgroundColor});
 
   BorderRadius get getBorderRadius {
     return borderRadius ?? BorderRadius.zero;
+  }
+
+  Color get getButtonBackgroundColor {
+    return buttonBackgroundColor ?? Colors.blue;
   }
 }

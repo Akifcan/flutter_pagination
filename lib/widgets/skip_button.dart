@@ -26,7 +26,7 @@ class SkipButton extends StatelessWidget {
       child: ClipRRect(
         borderRadius: buttonStyles.getBorderRadius,
         child: Material(
-          color: Colors.blue,
+          color: buttonStyles.getButtonBackgroundColor,
           child: InkWell(
             onTap: onTap,
             child: Padding(

@@ -72,13 +72,13 @@ Pagination(
 
 ![stylingimage](https://i.hizliresim.com/4mkcuv7.PNG)
 
-```
-  Pagination(
+Pagination(
             paginateButtonStyles: PaginateButtonStyles(
                 backgroundColor: Colors.pink,
-                activeBackgroundColor: Colors.amber,
+                activeBackgroundColor: Colors.black,
                 activeTextStyle: const TextStyle(color: Colors.red)),
             prevButtonStyles: PaginateSkipButton(
+                buttonBackgroundColor: Colors.orange,
                 icon: const Icon(
                   Icons.arrow_back_ios,
                   size: 30,
@@ -87,6 +87,7 @@ Pagination(
                     topLeft: Radius.circular(20),
                     bottomLeft: Radius.circular(20))),
             nextButtonStyles: PaginateSkipButton(
+                buttonBackgroundColor: Colors.purple,
                 icon: const Icon(
                   Icons.arrow_right_alt,
                   color: Colors.white,
@@ -104,8 +105,6 @@ Pagination(
             show: 4,
             currentPage: currentPage,
           )
-
-```
 
 | Required Fields     | Type                 |
 |----------------------|----------------------|
