@@ -56,8 +56,8 @@ class _PaginationState extends State<Pagination> {
         }
       }
       for (int i = widget.show; i > 0; i--) {
-        if (widget.currentPage - i - 1 > 0) {
-          prevPages.add(pages[widget.currentPage - i - 1]);
+        if (widget.currentPage - i > 0) {
+          prevPages.add(pages[widget.currentPage - i]);
         }
       }
     });
