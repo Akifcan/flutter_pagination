@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pagination/widgets/button_styles.dart';
-import 'package:flutter_pagination/widgets/paginate_button.dart';
-import 'package:flutter_pagination/widgets/skip_button.dart';
+import 'widgets/button_styles.dart';
+import 'widgets/paginate_button.dart';
+import 'widgets/skip_button.dart';
 
 class Pagination extends StatefulWidget {
   final PaginateSkipButton prevButtonStyles;
@@ -14,6 +14,7 @@ class Pagination extends StatefulWidget {
   final int show;
   final double? width;
   final double? height;
+  final bool? autoFocus;
   final Function(int number) onPageChange;
   const Pagination(
       {Key? key,
@@ -21,6 +22,7 @@ class Pagination extends StatefulWidget {
       this.height,
       this.useGroup = false,
       this.useSkipAndPrevButtons = true,
+      this.autoFocus = false,
       required this.prevButtonStyles,
       required this.nextButtonStyles,
       required this.paginateButtonStyles,
@@ -92,6 +94,27 @@ class _PaginationState extends State<Pagination> {
     } else {
       groupPaginate();
       pageController = PageController();
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.currentPage > widget.show && widget.autoFocus == true) {
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+        int currentIndex = -1;
+        for (int index = 0; index < groupedPages.length; index++) {
+          if (groupedPages[index].contains(widget.currentPage - 1)) {
+            currentIndex = index;
+            break;
+          }
+        }
+        pageController.animateToPage(
+          currentIndex,
+          duration: const Duration(milliseconds: 100),
+          curve: Curves.decelerate,
+        );
+      });
     }
   }
 
